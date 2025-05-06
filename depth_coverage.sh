@@ -25,11 +25,10 @@ usage() {
 OUTPUT_DIR="./output"
 THREADS=4
 FORCE_OVERWRITE=false
-REF="
+REF=""
 INPUT_1_FQ=""
 INPUT_2_FQ=""
 SAMTOOLS_PATH="/home/hantao/miniconda3/bin/samtools"
-#change the PATH, where you store the samtools
 
 # 解析命令行参数 (移除了 :m)
 while getopts ":r:1:2:o:t:fh" opt; do
