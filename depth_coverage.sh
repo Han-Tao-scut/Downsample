@@ -22,13 +22,13 @@ usage() {
 }
 
 # 默认参数
-OUTPUT_DIR="./output"
+OUTPUT_DIR="/data/output"
 THREADS=4
 FORCE_OVERWRITE=false
 REF=""
 INPUT_1_FQ=""
 INPUT_2_FQ=""
-SAMTOOLS_PATH="/home/hantao/miniconda3/bin/samtools"
+SAMTOOLS_PATH="/home/stereonote/samtools-1.21/samtools"
 
 # 解析命令行参数 (移除了 :m)
 while getopts ":r:1:2:o:t:fh" opt; do
@@ -45,7 +45,6 @@ while getopts ":r:1:2:o:t:fh" opt; do
         :) echo "选项 -$OPTARG 需要一个参数" >&2; usage ;;
     esac
 done
-
 # 检查必需参数
 if [[ -z "$REF" || -z "$INPUT_1_FQ" || -z "$INPUT_2_FQ" ]]; then
     echo "错误: 缺少必需的参数 (-r, -1, -2)!" >&2
